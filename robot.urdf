@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00625507541396678 1.11022302462516E-16 0.169632309877414"
+        rpy="0 0 0" />
+      <mass
+        value="40.4999492858241" />
+      <inertia
+        ixx="0.601241694922873"
+        ixy="-2.87237736925347E-17"
+        ixz="-0.0242879634045377"
+        iyy="0.988984344834278"
+        iyz="-5.55307000702812E-17"
+        izz="1.0154443013804" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_Link">
+    <inertial>
+      <origin
+        xyz="-7.97972798949331E-17 1.94289029309402E-16 -0.103383559842101"
+        rpy="0 0 0" />
+      <mass
+        value="0.588592729754915" />
+      <inertia
+        ixx="0.000955153956846016"
+        ixy="1.39250646016354E-19"
+        ixz="-3.55343579141932E-19"
+        iyy="0.000955153956846015"
+        iyz="-2.26404878570101E-19"
+        izz="0.00152474142558963" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right"
+    type="revolute">
+    <origin
+      xyz="-0.135 -0.09 0.067"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-4"
+      upper="4"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_Link">
+    <inertial>
+      <origin
+        xyz="0.103383559842101 1.11022302462516E-16 2.1163626406917E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.588592729754916" />
+      <inertia
+        ixx="0.00152474142558963"
+        ixy="-3.11531167906867E-19"
+        ixz="-3.8888996879452E-19"
+        iyy="0.000955153956846017"
+        iyz="-7.13998290461119E-20"
+        izz="0.000955153956846017" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left"
+    type="revolute">
+    <origin
+      xyz="-0.135 0.09 0.067"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-4"
+      upper="4"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="front_Link">
+    <inertial>
+      <origin
+        xyz="3.03703506787656E-10 0.00188427635535082 2.25242047235952E-12"
+        rpy="0 0 0" />
+      <mass
+        value="0.0702609283626188" />
+      <inertia
+        ixx="2.62120879167483E-05"
+        ixy="-8.10138057432007E-13"
+        ixz="8.93742718696424E-08"
+        iyy="1.8382195878302E-05"
+        iyz="-6.00793053231944E-15"
+        izz="1.41609949118849E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/front_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/front_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front"
+    type="revolute">
+    <origin
+      xyz="0.165 0 0.072"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="axis_Link">
+    <inertial>
+      <origin
+        xyz="0.000222472505748972 8.32667268468867E-17 -0.0299991750883947"
+        rpy="0 0 0" />
+      <mass
+        value="1.21543120847463" />
+      <inertia
+        ixx="0.00386259237571167"
+        ixy="-1.59370705036495E-20"
+        ixz="6.01959188954629E-06"
+        iyy="0.00386263701672888"
+        iyz="3.91238876200247E-19"
+        izz="0.00305092866451111" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/axis_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/axis_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="axis"
+    type="revolute">
+    <origin
+      xyz="-0.000222472505748916 -0.005 0.0299991750883952"
+      rpy="0 0 0" />
+    <parent
+      link="front_Link" />
+    <child
+      link="axis_Link" />
+    <axis
+      xyz="0.00741575019162885 0 -0.999972502946504" />
+    <limit
+      lower="-4"
+      upper="4"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="kinect_Link">
+    <inertial>
+      <origin
+        xyz="-9.21591052125414E-05 5.04687763148159E-05 0.036692548516437"
+        rpy="0 0 0" />
+      <mass
+        value="1.88003749355829" />
+      <inertia
+        ixx="0.00561268771998164"
+        ixy="-2.27771633536039E-06"
+        ixz="1.09284530959153E-06"
+        iyy="0.000757085904553863"
+        iyz="-5.98470784784101E-07"
+        izz="0.00556343302687422" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/kinect_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/kinect_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="kinect"
+    type="fixed">
+    <origin
+      xyz="0.185 0 0.297"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="kinect_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+<gazebo reference="kinect_Link">   
+ <sensor type="depth" name="kinect">     
+   <always_on>true</always_on>    
+    <update_rate>20.0</update_rate>    
+    <camera>          
+  <horizontal_fov>${60.0*M_PI/180.0}</horizontal_fov>     
+       <image>               
+ <format>R8G8B8</format>             
+   <width>640</width>              
+  <height>480</height>          
+  </image>        
+    <clip>               
+ <near>0.05</near>             
+   <far>8.0</far>          
+  </clip>      
+  </camera>      
+  <plugin name="kinect_controller" filename="libgazebo_ros_openni_kinect.so">         
+   <cameraName>kinect1</cameraName>       
+     <alwaysOn>true</alwaysOn>         
+   <updateRate>10</updateRate>        
+    <imageTopicName>rgb/image_raw</imageTopicName>   
+    <depthImageTopicName>depth/image_raw</depthImageTopicName>    
+    <pointCloudTopicName>depth/points</pointCloudTopicName>         
+   <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>       
+   <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>         
+   <frameName>kinect_Link</frameName>     
+   <baseline>0.1</baseline>          
+  <distortion_k1>0.0</distortion_k1>
+      <distortion_k2>0.0</distortion_k2>   
+      <distortion_k3>0.0</distortion_k3>      
+      <distortion_t1>0.0</distortion_t1>     
+      <distortion_t2>0.0</distortion_t2>     
+      <pointCloudCutoff>0.4</pointCloudCutoff>    
+    </plugin>  
+  </sensor> 
+</gazebo>
+</robot>
