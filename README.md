@@ -11,3 +11,9 @@
    另外需要在launch里面增加world.launch文件
  
  运行方法：  运行的时候直接运行那个world.launch文件就可以在gezobo里面看到完整的包括地图和robot的模型
+ 
+@ about kinect to build SLAM map
+i have upload the file of world.launch. plase raw the code and dowanload depthimag-to-laserscan package.
+
+when you want to roslaunch it, you just launch world.lauch and then 
+$ rosrun depthimage_to_laserscan depthimage_to_laserscan image:=/kinect1/depth/image_raw
