@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.00625507541396678 1.11022302462516E-16 0.169632309877414"
+        xyz="-0.00367118917753315 0.000218298627754743 0.14845566994301"
         rpy="0 0 0" />
       <mass
-        value="40.4999492858241" />
+        value="43.7289793607304" />
       <inertia
-        ixx="0.601241694922873"
-        ixy="-2.87237736925347E-17"
-        ixz="-0.0242879634045377"
-        iyy="0.988984344834278"
-        iyz="-5.55307000702812E-17"
-        izz="1.0154443013804" />
+        ixx="0.42588144392919"
+        ixy="-0.000297484646334764"
+        ixz="-0.00164840993407266"
+        iyy="0.81830308668807"
+        iyz="8.85091130367399E-05"
+        izz="1.02122466419532" />
     </inertial>
     <visual>
       <origin
@@ -45,20 +45,20 @@
     </collision>
   </link>
   <link
-    name="right_Link">
+    name="front_right_Link">
     <inertial>
       <origin
-        xyz="-7.97972798949331E-17 1.94289029309402E-16 -0.103383559842101"
+        xyz="-8.32667268468867E-17 -2.77555756156289E-17 -0.0434410741094558"
         rpy="0 0 0" />
       <mass
-        value="0.588592729754915" />
+        value="0.58827061564709" />
       <inertia
-        ixx="0.000955153956846016"
-        ixy="1.39250646016354E-19"
-        ixz="-3.55343579141932E-19"
-        iyy="0.000955153956846015"
-        iyz="-2.26404878570101E-19"
-        izz="0.00152474142558963" />
+        ixx="0.00095358669788381"
+        ixy="-2.83368080783419E-19"
+        ixz="8.05956179241043E-19"
+        iyy="0.00095358669788381"
+        iyz="3.12289332904768E-19"
+        izz="0.00152472894751309" />
     </inertial>
     <visual>
       <origin
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://robot/meshes/right_Link.STL" />
+          filename="package://robot/meshes/front_right_Link.STL" />
       </geometry>
       <material
         name="">
@@ -80,43 +80,146 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://robot/meshes/right_Link.STL" />
+          filename="package://robot/meshes/front_right_Link.STL" />
+      </geometry>
+    </collision>
+
+
+  </link>
+  <joint
+    name="front_right"
+    type="continuous">
+    <origin
+      xyz="0.155 -0.15 0.069"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="front_left_Link">
+    <inertial>
+      <origin
+        xyz="-5.27355936696949E-16 1.94289029309402E-16 -0.0434410741094559"
+        rpy="0 0 0" />
+      <mass
+        value="0.588270615647091" />
+      <inertia
+        ixx="0.000953586697883812"
+        ixy="-7.74143663737727E-20"
+        ixz="-8.3999833581235E-20"
+        iyy="0.000953586697883811"
+        iyz="-3.11944093140453E-19"
+        izz="0.0015247289475131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/front_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/front_left_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="right"
-    type="revolute">
+    name="front_left"
+    type="continuous">
     <origin
-      xyz="-0.135 -0.09 0.067"
-      rpy="1.5707963267949 0 3.14159265358979" />
+      xyz="0.155 0.15 0.069"
+      rpy="1.5708 0 0" />
     <parent
       link="base_link" />
     <child
-      link="right_Link" />
+      link="front_left_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="back_left_Link">
+    <inertial>
+      <origin
+        xyz="-8.32667268468867E-17 2.77555756156289E-17 -0.0434410741094559"
+        rpy="0 0 0" />
+      <mass
+        value="0.58827061564709" />
+      <inertia
+        ixx="0.00095358669788381"
+        ixy="-1.50202746509935E-19"
+        ixz="-5.89492059668342E-19"
+        iyy="0.00095358669788381"
+        iyz="-3.64288864773973E-19"
+        izz="0.00152472894751309" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/back_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/back_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_left"
+    type="continuous">
+    <origin
+      xyz="-0.135 0.15 0.069"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_left_Link" />
     <axis
       xyz="0 0 1" />
-    <limit
-      lower="-4"
-      upper="4"
-      effort="0"
-      velocity="0" />
   </joint>
   <link
-    name="left_Link">
+    name="back_right_Link">
     <inertial>
       <origin
-        xyz="0.103383559842101 1.11022302462516E-16 2.1163626406917E-16"
+        xyz="5.55111512312578E-17 -1.11022302462516E-16 -0.0434410741094558"
         rpy="0 0 0" />
       <mass
-        value="0.588592729754916" />
+        value="0.588270615647089" />
       <inertia
-        ixx="0.00152474142558963"
-        ixy="-3.11531167906867E-19"
-        ixz="-3.8888996879452E-19"
-        iyy="0.000955153956846017"
-        iyz="-7.13998290461119E-20"
-        izz="0.000955153956846017" />
+        ixx="0.00095358669788381"
+        ixy="-3.05792283667184E-19"
+        ixz="7.85359670835562E-20"
+        iyy="0.000953586697883809"
+        iyz="5.60320527161336E-19"
+        izz="0.00152472894751309" />
     </inertial>
     <visual>
       <origin
@@ -124,7 +227,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://robot/meshes/left_Link.STL" />
+          filename="package://robot/meshes/back_right_Link.STL" />
       </geometry>
       <material
         name="">
@@ -138,43 +241,38 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://robot/meshes/left_Link.STL" />
+          filename="package://robot/meshes/back_right_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="left"
-    type="revolute">
+    name="back_right"
+    type="continuous">
     <origin
-      xyz="-0.135 0.09 0.067"
-      rpy="1.5707963267949 0 1.5707963267949" />
+      xyz="-0.135 -0.15 0.069"
+      rpy="-1.5708 0 0" />
     <parent
       link="base_link" />
     <child
-      link="left_Link" />
+      link="back_right_Link" />
     <axis
-      xyz="-1 0 0" />
-    <limit
-      lower="-4"
-      upper="4"
-      effort="0"
-      velocity="0" />
+      xyz="0 0 1" />
   </joint>
   <link
-    name="front_Link">
+    name="laser_Link">
     <inertial>
       <origin
-        xyz="3.03703506787656E-10 0.00188427635535082 2.25242047235952E-12"
+        xyz="-0.000191890889836788 -8.07619959797279E-09 0.00798455062925515"
         rpy="0 0 0" />
       <mass
-        value="0.0702609283626188" />
+        value="0.0296109461913993" />
       <inertia
-        ixx="2.62120879167483E-05"
-        ixy="-8.10138057432007E-13"
-        ixz="8.93742718696424E-08"
-        iyy="1.8382195878302E-05"
-        iyz="-6.00793053231944E-15"
-        izz="1.41609949118849E-05" />
+        ixx="2.22315185792305E-06"
+        ixy="6.16384968776179E-13"
+        ixz="3.01173164023526E-08"
+        iyy="2.22350354866726E-06"
+        iyz="1.29880393109063E-12"
+        izz="3.08750342269333E-06" />
     </inertial>
     <visual>
       <origin
@@ -182,7 +280,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://robot/meshes/front_Link.STL" />
+          filename="package://robot/meshes/laser_Link.STL" />
       </geometry>
       <material
         name="">
@@ -196,101 +294,38 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://robot/meshes/front_Link.STL" />
+          filename="package://robot/meshes/laser_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="front"
-    type="revolute">
+    name="laser"
+    type="fixed">
     <origin
-      xyz="0.165 0 0.072"
-      rpy="1.5707963267949 0 3.14159265358979" />
+      xyz="0.205 0 0.156"
+      rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
-      link="front_Link" />
+      link="laser_Link" />
     <axis
-      xyz="0 1 0" />
-    <limit
-      lower="-0.2"
-      upper="0.2"
-      effort="0"
-      velocity="0" />
-  </joint>
-  <link
-    name="axis_Link">
-    <inertial>
-      <origin
-        xyz="0.000222472505748972 8.32667268468867E-17 -0.0299991750883947"
-        rpy="0 0 0" />
-      <mass
-        value="1.21543120847463" />
-      <inertia
-        ixx="0.00386259237571167"
-        ixy="-1.59370705036495E-20"
-        ixz="6.01959188954629E-06"
-        iyy="0.00386263701672888"
-        iyz="3.91238876200247E-19"
-        izz="0.00305092866451111" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://robot/meshes/axis_Link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://robot/meshes/axis_Link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="axis"
-    type="revolute">
-    <origin
-      xyz="-0.000222472505748916 -0.005 0.0299991750883952"
-      rpy="0 0 0" />
-    <parent
-      link="front_Link" />
-    <child
-      link="axis_Link" />
-    <axis
-      xyz="0.00741575019162885 0 -0.999972502946504" />
-    <limit
-      lower="-4"
-      upper="4"
-      effort="0"
-      velocity="0" />
+      xyz="0 0 0" />
   </joint>
   <link
     name="kinect_Link">
     <inertial>
       <origin
-        xyz="-9.21591052125414E-05 5.04687763148159E-05 0.036692548516437"
+        xyz="-9.21591052125137E-05 5.0468776315038E-05 0.0386925485164369"
         rpy="0 0 0" />
       <mass
         value="1.88003749355829" />
       <inertia
-        ixx="0.00561268771998164"
-        ixy="-2.27771633536039E-06"
-        ixz="1.09284530959153E-06"
-        iyy="0.000757085904553863"
-        iyz="-5.98470784784101E-07"
-        izz="0.00556343302687422" />
+        ixx="0.00561268771998165"
+        ixy="-2.27771633536026E-06"
+        ixz="1.09284530959139E-06"
+        iyy="0.000757085904553865"
+        iyz="-5.98470784784347E-07"
+        izz="0.00556343302687423" />
     </inertial>
     <visual>
       <origin
@@ -320,7 +355,7 @@
     name="kinect"
     type="fixed">
     <origin
-      xyz="0.185 0 0.297"
+      xyz="0.185 0 0.207"
       rpy="0 0 0" />
     <parent
       link="base_link" />
@@ -329,6 +364,35 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
+    <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <legacyMode>false</legacyMode>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>10</updateRate>
+      <leftJoint>back_left</leftJoint>
+      <rightJoint>back_right</rightJoint>
+      <wheelSeparation>0.4</wheelSeparation>
+      <wheelDiameter>0.3</wheelDiameter>
+      <torque>10</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <odometrySource>base_link</odometrySource>
+    <publishWheelTF>true</publishWheelTF>
+    <publishOdom>true</publishOdom>
+    <publishOdomTF>true</publishOdomTF>
+    <publishWheelJointState>true</publishWheelJointState>
+    <rosDebugLevel>na</rosDebugLevel>
+    <wheelAcceleration>0</wheelAcceleration>
+    <wheelTorque>5</wheelTorque>
+    <publishTf>1</publishTf>
+
+    </plugin>
+  </gazebo>
+
 <gazebo reference="kinect_Link">   
  <sensor type="depth" name="kinect">     
    <always_on>true</always_on>    
@@ -365,4 +429,42 @@
     </plugin>  
   </sensor> 
 </gazebo>
+
+
+  <!-- hokuyo -->
+  <gazebo reference="laser_Link">
+    <sensor type="gpu_ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+        <topicName>/scan</topicName>
+        <frameName>laser_Link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
 </robot>
